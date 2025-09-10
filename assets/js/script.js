@@ -10,12 +10,13 @@ const summerCard = summerSection.querySelectorAll(".card");
 
 const contactModal = document.querySelector("#contactModal");
 
-const body = document.getElementsByTagName("body")[0];
+const body = document.body;
 
-console.log(body);
+// console.log(body);
 
 const removeButton = document.getElementById("removeCards");
 
+// Alert Count
 const appendAlert = (message, type) => {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = [
@@ -37,6 +38,7 @@ if (alertTrigger) {
   });
 }
 
+// Remove Card
 removeButton.addEventListener("click", () => {
   card.forEach((card) => {
     card.remove();
@@ -61,13 +63,13 @@ const hotSummer = () => {
 
 hotSummer();
 
+// Contact Modal
 contactModal.addEventListener("click", () => {
   const modal = document.createElement("div");
   modal.setAttribute("id", "contactsModal");
   modal.classList.add("modal", "fade");
   modal.setAttribute("aria-labelledby", "introductionModalLabel");
-  modal.setAttribute("aria-hidden", "true");
-  modal.setAttribute("tabindex", "-1");
+
   modal.innerHTML = `  <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
